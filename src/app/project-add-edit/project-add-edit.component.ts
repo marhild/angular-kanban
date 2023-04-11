@@ -11,7 +11,7 @@ export class ProjectAddEditComponent implements OnInit {
 
   projectForm: FormGroup;
 
-  status: string[] = [
+  statusOptions: string[] = [
     'OPEN',
     'IN PROGRESS',
     'BACKLOG',
