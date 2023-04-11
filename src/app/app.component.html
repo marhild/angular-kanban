@@ -9,7 +9,7 @@
 </mat-toolbar>
 
 <div class="container">
-    <mat-card class="example-card flex-item" *ngFor="let val of projectList">
+    <mat-card class="flex-item" *ngFor="let val of projectList">
       <mat-card-header>
         <mat-card-title>{{val.title}}</mat-card-title>
         <mat-card-subtitle>To be completed by: {{val.dateOfCompletion | date}}</mat-card-subtitle>
@@ -21,8 +21,30 @@
         </p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
+        <button mat-button>
+          <mat-icon 
+            aria-hidden="false" 
+            aria-label="Example home icon" 
+            fontIcon="remove_red_eye" 
+            color="primary">
+          </mat-icon>
+        </button>
+        <button mat-button>
+          <mat-icon 
+            aria-hidden="false" 
+            aria-label="Example home icon" 
+            fontIcon="edit" 
+            color="primary">
+        </mat-icon>
+        </button>
+        <button mat-button (click)="openProjectDeleteConfirmation(val.id)">
+          <mat-icon 
+            aria-hidden="false" 
+            aria-label="Example home icon" 
+            fontIcon="delete" 
+            color="primary" >
+          </mat-icon>
+        </button>
       </mat-card-actions>
     </mat-card>
 </div>

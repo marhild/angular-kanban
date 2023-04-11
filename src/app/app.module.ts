@@ -19,11 +19,13 @@ import {MatSelectModule} from '@angular/material/select';
 import {ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
+import { ProjectDeleteComponent } from './project-delete/project-delete.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProjectAddEditComponent
+    ProjectAddEditComponent,
+    ProjectDeleteComponent
   ],
   imports: [
     BrowserModule,
