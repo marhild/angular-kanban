@@ -1,0 +1,21 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+mat-card {
+    color: rgb(208, 207, 207);
+}
+
+.flex-item {
+    width: 400px;
+    margin: 20px 10px 0px 10px;
+    flex:none;
+}

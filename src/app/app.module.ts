@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ProjectAddEditComponent} from './project-add-edit/project-add-edit.component';
+import { Routes, RouterModule } from '@angular/router';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
@@ -21,12 +22,20 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import { ProjectDeleteComponent } from './project-delete/project-delete.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { ProjectListComponent } from './project-list/project-list.component';
+
+const routes: Routes = [
+  {path: '', component: ProjectListComponent},
+  {path: '', redirectTo: '', pathMatch: 'full'},
+  {path: '**', redirectTo: '', pathMatch: 'full'},
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     ProjectAddEditComponent,
-    ProjectDeleteComponent
+    ProjectDeleteComponent,
+    ProjectListComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +54,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     ReactiveFormsModule,
     HttpClientModule,
     MatCardModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    RouterModule.forRoot(routes),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -41,32 +41,4 @@ export class AppComponent implements OnInit{
       error: console.log
     })
   }
-
-  openProjectDeleteConfirmation(data: any){
-    const dialogRef = this._dialog.open(ProjectDeleteComponent, {
-      data, 
-    });
-    dialogRef.afterClosed().subscribe({
-      next: (val) => {
-        if(val) {
-          this.getProjectList();
-        }
-      }
-    });
-  }
-
-  openEditProjectForm(data: any) {
-    const dialogRef = this._dialog.open(ProjectAddEditComponent, {
-      data, 
-    });
-
-    // updates list after edit
-    dialogRef.afterClosed().subscribe({
-      next: (val) => {
-        if(val) {
-          this.getProjectList();
-        }
-      }
-    })
-  }
 }

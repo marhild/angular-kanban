@@ -30,6 +30,13 @@
       "status": "CLOSED",
       "description": "iam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit",
       "id": 2
+    },
+    {
+      "title": "projectTitle 6",
+      "dateOfCompletion": "2023-04-21T22:00:00.000Z",
+      "status": "BACKLOG",
+      "description": "lorem ipsum",
+      "id": 3
     }
   ]
 }
