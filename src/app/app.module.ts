@@ -23,9 +23,11 @@ import {MatCardModule} from '@angular/material/card';
 import { ProjectDeleteComponent } from './project-delete/project-delete.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ProjectListComponent } from './project-list/project-list.component';
+import { ProjectDetailsComponent } from './project-details/project-details.component';
 
 const routes: Routes = [
   {path: '', component: ProjectListComponent},
+  {path: 'projects/:id', component: ProjectDetailsComponent},
   {path: '', redirectTo: '', pathMatch: 'full'},
   {path: '**', redirectTo: '', pathMatch: 'full'},
 ];
@@ -35,7 +37,8 @@ const routes: Routes = [
     AppComponent,
     ProjectAddEditComponent,
     ProjectDeleteComponent,
-    ProjectListComponent
+    ProjectListComponent,
+    ProjectDetailsComponent
   ],
   imports: [
     BrowserModule,

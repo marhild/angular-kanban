@@ -27,6 +27,10 @@ export class ProjectsService {
     return this._http.put(`http://localhost:3000/projects/${id}`, data);
   }
 
+  getProjectById(id: number): Observable<any> {
+    return this._http.get(`http://localhost:3000/projects/${id}`);
+  }
+
   sendAddEditProjectEvent(){
     this.projectListSubject.next(this.projectListSubject);
   }
