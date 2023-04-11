@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import {ProjectAddEditComponent} from './project-add-edit/project-add-edit.component';
+import {ProjectsService} from './services/projects.service';
 
 @Component({
   selector: 'app-root',
@@ -9,15 +10,34 @@ import {ProjectAddEditComponent} from './project-add-edit/project-add-edit.compo
 })
 export class AppComponent implements OnInit{
 
-  constructor(private _dialog: MatDialog, ) {}
+  projectList: any;
+
+  constructor(
+    private _dialog: MatDialog,
+    private _projectService: ProjectsService,
+    ) {}
 
   ngOnInit(): void {
-
+    this.projectList = this.getProjectList();
   }
 
   openProjectAddEditForm(){
-    const diaogRef = this._dialog.open(ProjectAddEditComponent);
+    const dialogRef = this._dialog.open(ProjectAddEditComponent);
+    dialogRef.afterClosed().subscribe({
+      next: (val) => {
+        if(val) {
+          this.projectList = this.getProjectList();
+        }
+      }
+    })
   }
 
-  getProjectList(){}
+  getProjectList(){
+    this._projectService.getProjectList().subscribe({
+      next: (res) => {
+        this.projectList = res;
+      },
+      error: console.log
+    })
+  }
 }
