@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectsService {
+
+  private projectListSubject = new Subject<any>();
 
   constructor(private _http: HttpClient) { }
 
@@ -23,5 +25,13 @@ export class ProjectsService {
 
   updateProject(id: number, data: any): Observable<any> {
     return this._http.put(`http://localhost:3000/projects/${id}`, data);
+  }
+
+  sendAddEditProjectEvent(){
+    this.projectListSubject.next(this.projectListSubject);
+  }
+
+  getAddEditProjectEvent():Observable<any>{
+     return this.projectListSubject.asObservable();
   }
 }

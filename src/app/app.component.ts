@@ -11,34 +11,22 @@ import {ProjectDeleteComponent} from './project-delete/project-delete.component'
 })
 export class AppComponent implements OnInit{
 
-  projectList: any;
 
   constructor(
     private _dialog: MatDialog,
     private _projectService: ProjectsService,
     ) {}
 
-  ngOnInit(): void {
-    this.projectList = this.getProjectList();
-  }
+  ngOnInit(): void {}
 
   openProjectAddEditForm(){
     const dialogRef = this._dialog.open(ProjectAddEditComponent);
     dialogRef.afterClosed().subscribe({
       next: (val) => {
         if(val) {
-          this.projectList = this.getProjectList();
+          this._projectService.sendAddEditProjectEvent();
         }
       }
-    })
-  }
-
-  getProjectList(){
-    this._projectService.getProjectList().subscribe({
-      next: (res) => {
-        this.projectList = res;
-      },
-      error: console.log
     })
   }
 }

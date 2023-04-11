@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import {ProjectAddEditComponent} from '../project-add-edit/project-add-edit.component';
 import {ProjectsService} from '../services/projects.service';
 import {ProjectDeleteComponent} from '../project-delete/project-delete.component';
+import {Subscription} from 'rxjs'
 
 @Component({
   selector: 'app-project-list',
@@ -12,11 +13,15 @@ import {ProjectDeleteComponent} from '../project-delete/project-delete.component
 export class ProjectListComponent implements OnInit {
 
   projectList: any;
+  addEditProjectSubscribtion: Subscription;
 
   constructor(
     private _dialog: MatDialog,
     private _projectService: ProjectsService,
-    ) {}
+    ) {
+      // add button from app.component triggers getProjectList()
+      this.addEditProjectSubscribtion = this._projectService.getAddEditProjectEvent().subscribe(() => this.getProjectList())
+    }
 
   ngOnInit(): void {
     this.projectList = this.getProjectList();
