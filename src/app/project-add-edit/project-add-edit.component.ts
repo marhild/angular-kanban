@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import {ProjectsService} from '../services/projects.service';
 
 @Component({
   selector: 'app-project-add-edit',
@@ -22,6 +23,7 @@ export class ProjectAddEditComponent implements OnInit {
     private _fb: FormBuilder, 
     private _dialogRef: MatDialogRef<ProjectAddEditComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
+    private _projectService: ProjectsService,
   ) {
     this.projectForm = this._fb.group({
       title: '',
@@ -33,6 +35,13 @@ export class ProjectAddEditComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onFormSubmit() {}
+  onFormSubmit() {
+    this._projectService.addProject(this.projectForm.value).subscribe({
+      next: (val:any) => {
+        this._dialogRef.close(true);
+      },
+      error: console.log
+    })
+  }
 
 }
