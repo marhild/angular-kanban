@@ -20,6 +20,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import { ProjectDeleteComponent } from './project-delete/project-delete.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { ProjectDeleteComponent } from './project-delete/project-delete.componen
     MatSelectModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

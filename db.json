@@ -23,6 +23,13 @@
       "status": "IN PROGRESS",
       "description": "sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliqu",
       "id": 1
+    },
+    {
+      "title": "projectTitle 3",
+      "dateOfCompletion": "2023-04-21T22:00:00.000Z",
+      "status": "CLOSED",
+      "description": "iam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit",
+      "id": 2
     }
   ]
 }
