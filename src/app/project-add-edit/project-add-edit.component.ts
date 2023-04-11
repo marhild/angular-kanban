@@ -35,16 +35,32 @@ export class ProjectAddEditComponent implements OnInit {
     })
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.projectForm.patchValue(this.data);
+  }
 
   onFormSubmit() {
-    this._projectService.addProject(this.projectForm.value).subscribe({
-      next: (val:any) => {
-        this._dialogRef.close(true);
-        this._toastService.openSnackBar('New Project added.');
-      },
-      error: console.log
-    })
+    if(this.projectForm.valid) {
+      if(this.data) {
+        this._projectService
+          .updateProject(this.data.id, this.projectForm.value)
+          .subscribe({
+            next: (val: any) => {
+              this._dialogRef.close(true);
+              this._toastService.openSnackBar('Project updated.');
+            },
+            error: console.log
+          })
+      } else {
+        this._projectService.addProject(this.projectForm.value).subscribe({
+          next: (val:any) => {
+            this._dialogRef.close(true);
+            this._toastService.openSnackBar('New Project added.');
+          },
+          error: console.log
+        })
+      }
+    }
   }
 
 }

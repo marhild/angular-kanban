@@ -52,6 +52,21 @@ export class AppComponent implements OnInit{
           this.getProjectList();
         }
       }
+    });
+  }
+
+  openEditProjectForm(data: any) {
+    const dialogRef = this._dialog.open(ProjectAddEditComponent, {
+      data, 
+    });
+
+    // updates list after edit
+    dialogRef.afterClosed().subscribe({
+      next: (val) => {
+        if(val) {
+          this.getProjectList();
+        }
+      }
     })
   }
 }
