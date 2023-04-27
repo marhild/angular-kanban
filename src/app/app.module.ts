@@ -24,6 +24,7 @@ import { ProjectDeleteComponent } from './project-delete/project-delete.componen
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ProjectListComponent } from './project-list/project-list.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
+import { TaskAddEditComponent } from './task-add-edit/task-add-edit.component';
 
 const routes: Routes = [
   {path: '', component: ProjectListComponent},
@@ -38,7 +39,8 @@ const routes: Routes = [
     ProjectAddEditComponent,
     ProjectDeleteComponent,
     ProjectListComponent,
-    ProjectDetailsComponent
+    ProjectDetailsComponent,
+    TaskAddEditComponent
   ],
   imports: [
     BrowserModule,
