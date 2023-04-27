@@ -24,3 +24,13 @@ mat-card {
     text-decoration: none;
     color: white;
 }
+
+.main-body {
+    padding-top: 20px;
+    margin: 0px auto;
+    max-width: 1248px;
+}
+
+.main-body >  mat-form-field {
+    width: 100%;
+}

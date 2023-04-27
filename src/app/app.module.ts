@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ProjectAddEditComponent} from './project-add-edit/project-add-edit.component';
 import { Routes, RouterModule } from '@angular/router';
 
+import {MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
@@ -25,6 +27,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ProjectListComponent } from './project-list/project-list.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { TaskAddEditComponent } from './task-add-edit/task-add-edit.component';
+import { TaskListComponent } from './task-list/task-list.component';
 
 const routes: Routes = [
   {path: '', component: ProjectListComponent},
@@ -40,7 +43,8 @@ const routes: Routes = [
     ProjectDeleteComponent,
     ProjectListComponent,
     ProjectDetailsComponent,
-    TaskAddEditComponent
+    TaskAddEditComponent,
+    TaskListComponent
   ],
   imports: [
     BrowserModule,
@@ -61,6 +65,8 @@ const routes: Routes = [
     MatCardModule,
     MatSnackBarModule,
     RouterModule.forRoot(routes),
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

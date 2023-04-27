@@ -16,6 +16,24 @@
   "profile": {
     "name": "typicode"
   },
+  "tasks": [
+    {
+      "projectId": 4,
+      "title": "Hildebrandt",
+      "dateOfCompletion": "2023-04-29T22:00:00.000Z",
+      "status": "IN PROGRESS",
+      "description": "desc",
+      "id": 1
+    },
+    {
+      "projectId": 4,
+      "title": "ewr",
+      "dateOfCompletion": "2023-04-28T22:00:00.000Z",
+      "status": "BACKLOG",
+      "description": "zkjh",
+      "id": 2
+    }
+  ],
   "projects": [
     {
       "title": "projectTitleAAAAAAAAA",

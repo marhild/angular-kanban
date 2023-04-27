@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProjectsService } from '../services/projects.service';
 import { Project } from '../common/project';
@@ -22,11 +22,11 @@ export class ProjectDetailsComponent {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(() => {
-      this.handlePrjectDetails();
+      this.handleProjectDetails();
     })
   }
 
-  handlePrjectDetails() {
+  handleProjectDetails() {
     //get id string and convert to a number
     const theProjectId: number = +this.route.snapshot.paramMap.get('id')!;
 

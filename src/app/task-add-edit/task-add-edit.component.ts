@@ -42,6 +42,20 @@ export class TaskAddEditComponent implements OnInit{
     console.log('inside dialog', this.data);
   }
 
-  onFormSubmit() {}
+  onFormSubmit() {
+    if(this.taskForm.valid) {
+      if(!this.data) {}
+      else {
+        this._taskService.addTask(this.taskForm.value)
+          .subscribe({
+            next: (val: any) => {
+              this._dialogRef.close(true);
+              this._toastService.openSnackBar('New Task added.');
+            },
+            error: console.log
+          })
+      }
+    }
+  }
 
 }
