@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    margin-top: 20px;
+}
+
+mat-card {
+    color: rgb(208, 207, 207);
+}
+
+.flex-item {
+    width: 100%;
+    max-width: 1248px;
+    margin: auto;
+    flex:none;
+}
+
+mat-form-field {
+    width: 100%;
+}
